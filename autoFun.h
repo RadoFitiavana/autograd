@@ -777,7 +777,7 @@ namespace autoDiff
 	{
 		for (std::shared_ptr<cg::Var<T>>& node : _topo)
 		{
-			node->grad().clear();
+			std::vector<T>().swap(node->grad());
 			node->visited() = false;
 		}
 	}
